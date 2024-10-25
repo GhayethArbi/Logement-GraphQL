@@ -16,10 +16,31 @@ public class Query implements GraphQLRootResolver {
         this.logementRepository= repoLg;
 
     }
+
+
+    //rendez vous
     public List<RendezVous> getallrendezVous(){
         return this.rendezVousRepository.getListeRendezVous();
     }
+//////
+    public List<RendezVous> getListeRendezVousByLogementRef(int reference){
+        return this.rendezVousRepository.getListeRendezVousByLogementRef(reference);
+    }
+
+
+
+
+    //logement
     public Logement getLogementByReference(int reference){
         return this.logementRepository.getLogementsByReference(reference);
     }
+
+    public List<Logement> getAllLogements() {
+        return this.logementRepository.getAllLogements();
+    }
+
+    public List<Logement> getLogementByType(Logement.Type type){
+        return this.logementRepository.getLogementsByType(type);
+    }
+
 }

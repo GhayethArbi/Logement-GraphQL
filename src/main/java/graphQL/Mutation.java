@@ -15,12 +15,13 @@ public class Mutation  implements GraphQLRootResolver {
         this.rendezVousRepository= repoR;
         this.logementRepository=repoLo;
     }
-
-  /*  public RendezVous createRendeVous(int id , String date , String heure , int refLog , String num ){
+    //rendezvous
+    public RendezVous createRendezVous(int id , String date , String heure , int refLog , String num ){
         RendezVous r = new RendezVous(id,date,heure,logementRepository.getLogementsByReference(refLog),num);
         this.rendezVousRepository.addRendezVous(r);
         return  r;
-    }*/
+    }
+
 
 
     public Boolean updateRendezVous(int id, String date, String heure, String numTel){
@@ -29,7 +30,14 @@ public class Mutation  implements GraphQLRootResolver {
         System.out.println(rdv);
         return rendezVousRepository.updateRendezVous(rdv);
     }
+    public boolean deleteRendezVous(int id){
+        return rendezVousRepository.deleteRendezVous(id);
+    }
 
+
+
+
+    //logement
     public Logement createLogement(int reference, String adresse) {
         Logement logement = new Logement(reference,adresse);
         logementRepository.saveLogement(logement);

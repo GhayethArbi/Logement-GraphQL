@@ -42,9 +42,8 @@ public class RendezVousRepository {
         return liste;
     }
     public boolean updateRendezVous(RendezVous rendezVous){
-        System.out.println("---------------------------------------");
+
         int index=listeRendezVous.indexOf(rendezVous);
-        System.out.println(index);
         if(index!=-1){
             System.out.println("---------------------------------------");
             Logement logement=logementMetier.getLogementsByReference(rendezVous.getLogement().getReference());

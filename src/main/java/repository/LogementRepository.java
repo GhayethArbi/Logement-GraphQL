@@ -31,9 +31,7 @@ public class LogementRepository {
         return liste;
     }
 
-    public void saveLogement(Logement logement) {
-        logements.add(logement);
-    }
+
     public Logement getLogementsByReference(int reference){
 
         for (Logement l:logements){
@@ -43,5 +41,7 @@ public class LogementRepository {
         return null;
     }
 
-
+    public void saveLogement(Logement logement) {
+        logements.add(logement);
+    }
 }
